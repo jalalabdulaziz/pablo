@@ -21,31 +21,9 @@
 	animation-fill-mode: both;
 }
 
-.animated-slow {
-	-webkit-animation-duration: 3.5s;
-	animation-duration: 3.5s;
-	-webkit-animation-fill-mode: both;
-	animation-fill-mode: both;
-}
-
-.animated.delay-1 {
+.animated.delay {
 	-webkit-animation-delay: 1s;
 	animation-delay: 1s;
-}
-
-.animated.delay-2 {
-	-webkit-animation-delay: 2.5s;
-	animation-delay: 2.5s;
-}
-
-.animated.delay-3 {
-	-webkit-animation-delay: 3s;
-	animation-delay: 3s;
-}
-
-.animated.delay-4 {
-	-webkit-animation-delay: 3.5s;
-	animation-delay: 3.5s;
 }
 
 @-webkit-keyframes fadeIn {
@@ -165,19 +143,9 @@ section {
 	position: relative;
 	justify-content: center;
 	min-height: 100vh;
+	max-height: 100vh;
 	color: #fff;
 	text-align: center;
-}
-
-.main .background-image {
-	display: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	z-index: -3;
 }
 
 .main .background-video {
@@ -192,7 +160,7 @@ section {
 	-moz-transition: all ease 1s;
 }
 
-.main h1 {
+h1 {
 	font-family: "pablo_webfont", sans-serif;
 	font-size: 38px;
 	margin-bottom: 15px;
@@ -217,6 +185,7 @@ h3 {
 	bottom: 0;
 	width: 100%;
 	padding: 50px;
+	text-align: center;
 }
 
 .footer p {
@@ -237,9 +206,8 @@ h3 {
 
 .social-icon svg {
 	fill: #000;
-	width: 26px;
-	height: 26px;
-	padding: 2px;
+	width: 24px;
+	height: 24px;
 	display: block;
     margin: 0 auto;
 }
@@ -270,39 +238,30 @@ h3 {
 		height: 120px;
 	}
 
-	.main .background-image {
-		display: block;
-	}
-
-	.main h1 {
-		font-size: 21px;
+	.social-icon svg {
+		width: 20px;
+		height: 20px;
 	}
 
 	h3 {
 		font-size: 14px;
 	}
 
-	.main .kc-logo-picto {
-		width: 70px;
-		margin-bottom: 30px;
-	}
-
 	.footer {
-		padding: 35px;
-	}
-
-	.footer .info {
-		font-size: 12px;
-		margin-top: 5px;
-	}
-
-	.footer p {
-		font-size: 9px;
+		padding: 20px;
 	}
 }
 
 @media (max-width: 320px){
 	section {
 		padding: 10%;
+	}
+	
+	.logo {
+		height: 100px;
+	}
+
+	h3 {
+		font-size: 12px;
 	}
 }
