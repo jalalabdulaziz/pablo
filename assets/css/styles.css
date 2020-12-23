@@ -1,0 +1,308 @@
+/*-------------
+ 	Font
+-------------*/
+
+@font-face {
+    font-family: 'pablo_webfont';
+    src: url('../fonts/pablo_webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+/*-------------
+ 	Animation
+-------------*/
+
+.animated {
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.animated-slow {
+	-webkit-animation-duration: 3.5s;
+	animation-duration: 3.5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.animated.delay-1 {
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+.animated.delay-2 {
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+
+.animated.delay-3 {
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+}
+
+.animated.delay-4 {
+	-webkit-animation-delay: 3.5s;
+	animation-delay: 3.5s;
+}
+
+@-webkit-keyframes fadeIn {
+	from {
+	  opacity: 0;
+	}
+  
+	to {
+	  opacity: 1;
+	}
+  }
+  
+  @keyframes fadeIn {
+	from {
+	  opacity: 0;
+	}
+  
+	to {
+	  opacity: 1;
+	}
+}
+  
+.fadeIn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInUp {
+	from {
+	  opacity: 0;
+	  -webkit-transform: translate3d(0, 100%, 0);
+	  transform: translate3d(0, 100%, 0);
+	}
+  
+	to {
+	  opacity: 1;
+	  -webkit-transform: translate3d(0, 0, 0);
+	  transform: translate3d(0, 0, 0);
+	}
+  }
+  
+  @keyframes fadeInUp {
+	from {
+	  opacity: 0;
+	  -webkit-transform: translate3d(0, 100%, 0);
+	  transform: translate3d(0, 100%, 0);
+	}
+  
+	to {
+	  opacity: 1;
+	  -webkit-transform: translate3d(0, 0, 0);
+	  transform: translate3d(0, 0, 0);
+	}
+}
+  
+.fadeInUp {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+}
+
+
+/*-------------
+ 	General
+-------------*/
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+::-moz-selection {
+	background:transparent;
+}
+
+::selection {
+	background:transparent;
+}
+
+html{
+	font-family: "pablo_webfont", sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	background: #fff;
+	color: #000;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center; 
+}
+
+
+/*----------------
+ 	Main Section
+----------------*/
+
+.logo {
+	position: fixed;
+	height: 200px;
+	width: 100%;
+	background: url("../img/pablo_logo_loop.gif");
+	background-size: cover;
+	background-position-y: bottom;
+}
+
+.main {
+	position: relative;
+	justify-content: center;
+	min-height: 100vh;
+	color: #fff;
+	text-align: center;
+}
+
+.main .background-image {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	z-index: -3;
+}
+
+.main .background-video {
+	position: absolute;
+	object-fit: cover;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -2;
+	transition: all ease 1s;
+	-moz-transition: all ease 1s;
+}
+
+.main h1 {
+	font-family: "pablo_webfont", sans-serif;
+	font-size: 38px;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+	letter-spacing: .3em;
+}
+
+h3 {
+	font-family: "pablo_webfont", sans-serif;
+	text-transform: uppercase;
+	font-size: 16px;
+	letter-spacing: .05em;
+}
+
+
+/*-------------------
+ 	Footer Section
+-------------------*/
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 50px;
+}
+
+.footer p {
+	font-family: "pablo_webfont", sans-serif;
+	font-size: 12px;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+}
+
+.footer h3 {
+	margin-bottom: 10px;
+}
+
+.social-icon {
+	display: inline-block;
+	position: relative;
+}
+
+.social-icon svg {
+	fill: #000;
+	width: 26px;
+	height: 26px;
+	padding: 2px;
+	display: block;
+    margin: 0 auto;
+}
+
+.social-icon:hover svg {
+	fill: #000;
+}
+
+.social-icon, .social-icon svg {
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+
+/*-------------------
+ 	Responsive
+-------------------*/
+
+@media (max-width: 600px){
+	section {
+		padding: 15%;
+	}
+
+	.logo {
+		height: 120px;
+	}
+
+	.main .background-image {
+		display: block;
+	}
+
+	.main h1 {
+		font-size: 21px;
+	}
+
+	h3 {
+		font-size: 14px;
+	}
+
+	.main .kc-logo-picto {
+		width: 70px;
+		margin-bottom: 30px;
+	}
+
+	.footer {
+		padding: 35px;
+	}
+
+	.footer .info {
+		font-size: 12px;
+		margin-top: 5px;
+	}
+
+	.footer p {
+		font-size: 9px;
+	}
+}
+
+@media (max-width: 320px){
+	section {
+		padding: 10%;
+	}
+}
