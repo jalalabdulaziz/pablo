@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'pablo_webfont';
-    src: url('../fonts/pablo_webfont.woff') format('woff');
+    src: url('../fonts/webfont.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
@@ -130,13 +130,30 @@ section {
  	Main Section
 ----------------*/
 
-.logo {
-	position: fixed;
-	height: 200px;
+.logo, .stripe-container {
+	position: absolute;
+	justify-content: center;
 	width: 100%;
-	background: url("../img/pablo_logo_loop.gif");
-	background-size: cover;
-	background-position-y: bottom;
+	height: 100vh;
+}
+
+.logo {
+	z-index: -7777;
+}
+
+.stripe-container {
+	z-index: -8888;
+}
+
+.logo .pablo-logo {
+	width: 25vw;
+}
+
+.stripe {
+	width: 100%;
+	height: 100%;
+	background: url('../img/pablo_stripe.svg') no-repeat;
+	background-size: 100% 100%;
 }
 
 .main {
@@ -146,18 +163,27 @@ section {
 	max-height: 100vh;
 	color: #fff;
 	text-align: center;
+	z-index: 8888;
 }
 
-.main .background-video {
+
+.background-video {
 	position: absolute;
 	object-fit: cover;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: -2;
 	transition: all ease 1s;
 	-moz-transition: all ease 1s;
+}
+
+.background-video.mobile {
+	display: none;
+}
+
+.top {
+	height: 40vh !important;
 }
 
 h1 {
@@ -186,6 +212,7 @@ h3 {
 	width: 100%;
 	padding: 50px;
 	text-align: center;
+	z-index: 9999;
 }
 
 .footer p {
@@ -216,28 +243,42 @@ h3 {
 	fill: #000;
 }
 
-.social-icon, .social-icon svg {
-	-webkit-transition: all 0.4s ease;
-	-moz-transition: all 0.4s ease;
-	-ms-transition: all 0.4s ease;
-	-o-transition: all 0.4s ease;
-	transition: all 0.4s ease;
-}
-
 
 /*-------------------
  	Responsive
 -------------------*/
 
+@media (max-width: 800px){
+	.logo .pablo-logo {
+		width: 60vw;
+	}
+
+	.stripe {
+		max-height: 300px;
+	}
+
+	.background-video {
+		display: none;
+	}
+
+	.background-video.mobile {
+		display: flex;
+	}
+
+	.main {
+		z-index: -9999 !important;
+	}
+
+	.logo, .footer {
+		z-index: 9999 !important;
+	}
+
+	.stripe-container {
+		z-index: 1 !important;
+	}
+}
+
 @media (max-width: 600px){
-	section {
-		padding: 15%;
-	}
-
-	.logo {
-		height: 120px;
-	}
-
 	.social-icon svg {
 		width: 20px;
 		height: 20px;
@@ -248,19 +289,23 @@ h3 {
 	}
 
 	.footer {
-		padding: 20px;
+		padding: 30px 10px;
+	}
+
+	.logo .pablo-logo {
+		width: 70vw;
+	}
+
+	.stripe {
+		height: 40vw;
+	}
+
+	.top {
+		height: 35vh !important;
 	}
 }
 
 @media (max-width: 320px){
-	section {
-		padding: 10%;
-	}
-	
-	.logo {
-		height: 100px;
-	}
-
 	h3 {
 		font-size: 12px;
 	}
